@@ -9,9 +9,9 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-#include "../includes/constants.h"
-#include "../includes/stringmanip.h"
-#include "../includes/fileio.h"
+#include "../includes1/constants.h"
+#include "../includes1/stringmanip.h"
+#include "../includes1/fileio.h"
 
 
 int main(int argc, char *argv[]) {	
