@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : pointer_proj_small.cpp
-// Author      : 
+// Author      : Rafael Diaz
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
@@ -15,13 +15,25 @@ using namespace std;
 
 
 int main(int argc, char *argv[]) {	
-	//TODO Get commandline arguments
+	//Get commandline arguments
+	if (argc == 2 && argv[1][0] == HELP_CHAR){
+		cout << HELP_STRING1 << HELP_STRING2 << endl;
+		return SUCCESS;
+	}
+	if (argc != EXPECTED_NUMBER_ARGUMENTS){
+		return FAIL_WRONG_NUMBER_ARGS;
+	}
+
+	string input = string(argv[1]);
+	string output = string(argv[2]);
+	string tag = string(argv[3]);
+	string replacement = string(argv[4]);
+
+	//can we read file? Fail if not -> completed in fileio.cpp
 	
-	//TODO can we read file? Fail if not
+	// how many tags found in file? -> completed in stringmanip.cpp
 	
-	//TODO how many tags found in file?
-	
-	//TODO how much memory to allocate?
+	// how much memory to allocate -> completed in stringmanip.cpp
 	
 	//TODO allocate memory
 	
