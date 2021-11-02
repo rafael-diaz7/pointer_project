@@ -21,6 +21,7 @@ int main(int argc, char *argv[]) {
 		return SUCCESS;
 	}
 	if (argc != EXPECTED_NUMBER_ARGUMENTS){
+		cout << HELP_STRING2 << endl;
 		return FAIL_WRONG_NUMBER_ARGS;
 	}
 
