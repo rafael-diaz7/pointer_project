@@ -34,7 +34,7 @@ namespace KP{
 	 */
 	int amountOfMemoryToAllocateForNewString(int len_src, int numbTagsToReplace, int len_tag, int len_tag_replacement){
 		int diff = len_tag_replacement - len_tag;
-		return len_src + (diff * numbTagsToReplace);
+		return len_src + (diff * numbTagsToReplace) + 1;
 	}
 	
 	/**
@@ -69,13 +69,16 @@ namespace KP{
 		while (src_start <= strlen(src)){
 			if (*(src_ptr + src_start) == tag[0]){ // move pointer across, compare to first char of tag
 				if (strncmp((src_ptr+src_start), tag, strlen(tag)) == 0){
-					strncpy(new_ptr, tag_replacement, strlen(tag_replacement));
-					src_ptr += strlen(tag); // move pointer ahead past the tag
-					new_ptr += strlen(tag_replacement); // move other pointer ahead by the replacement
+					strncpy((new_ptr+new_start), tag_replacement, strlen(tag_replacement));
+//					src_ptr += strlen(tag); // move pointer ahead past the tag
+//					new_ptr += strlen(tag_replacement); // move other pointer ahead by the replacement
+					new_start += strlen(tag_replacement);
+					src_start += strlen(tag);
 				}
 			}
 			strncpy(new_ptr+new_start,src_ptr+src_start, 1);
-			// new_src[new_start] = src[src_start];
+//			strncpy(new_ptr, src_ptr, 1);
+//			new_src[new_start] = src[src_start];
 			new_start++;
 			src_start++;
 		}
